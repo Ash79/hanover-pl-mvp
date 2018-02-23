@@ -44,6 +44,14 @@ paths:
           in: query
           description: Page number
           type: integer
+        - name: customerName
+          in: query
+          description: customer name
+          type: string
+        - name: customerNumber
+          in: query
+          description: customer number
+          type: string
     put:
       tags:
         - Customer

@@ -1,18 +1,39 @@
 'use strict';
-  var CustomerFD = require('../../sampleData/v1/Customer.json');
-  var CustomerData = CustomerFD;
+  const sully = require('../../sampleData/v1/sully.json')
+  const dave = require('../../sampleData/v1/dave.json');
+  const brian = require('../../sampleData/v1/brian.json');
 
+  const sullyId = sully[0].CustomerInfoRequest.customerInfo.customerNumber;
+  const daveId = dave[0].CustomerInfoRequest.customerInfo.customerNumber;
+  const brianId = brian[0].CustomerInfoRequest.customerInfo.customerNumber;
+
+var CustomerData;
 
 var Promise = require('bluebird');
 var paginationService = require('../../services/pagination.js');
  
-
 exports.getCustomer = function(args, res, next) {
 /**
  * Gets all customers from the system that the user has access to
- *
+ *  
  * returns List
  **/
+  if(args['customerNumber'].value != null){
+      switch(args['customerNumber'].value){
+              case sullyId:
+                CustomerData = sully;
+                break;
+              case brianId:
+                CustomerData = brian;
+                break;
+              case daveId:
+                CustomerData = dave;
+                break;
+              default:
+                CustomerData = "customer could not be found";
+            }
+  }
+
   if (Object.keys(CustomerData).length > 0) {
             res.setHeader('Content-Type', 'application/json');
                                       console.log('Start Pagination......');
