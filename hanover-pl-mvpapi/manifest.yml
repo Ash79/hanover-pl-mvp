@@ -1,0 +1,4 @@
+---
+applications:
+- name: hanover-pl-mvp-apis
+  memory: 256M

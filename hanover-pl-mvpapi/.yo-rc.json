@@ -1,0 +1,633 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "put",
+        "post",
+        "patch",
+        "delete"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": true,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "resourceFirst",
+        "contentTypeOrder": "applicationFirst",
+        "customHeaderName": "version"
+      },
+      "apiData": {
+        "returnDataType": "No"
+      },
+      "records": {
+        "limit": 10
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": true
+      },
+      "filter": {
+        "FilterEnable": false
+      },
+      "security": {
+        "enabled": false,
+        "type": "basic"
+      },
+      "logging": {
+        "enabled": false
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "nodejs",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "hanover-pl-mvp-apis",
+        "appMemory": "256M"
+      },
+      "javaOptions": {
+        "basePackage": "io.cedrus.apigen",
+        "packagingType": "jar",
+        "framework": [
+          "jaxrs",
+          "jaxrs"
+        ],
+        "springBootDeployment": "tomcat"
+      }
+    },
+    "multipleResources": {
+      "enabled": true,
+      "resources": [
+        {
+          "resourceName": "customer",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"CustomerInfoRequest\":{\"type\":\"object\",\"properties\":{\"requestStdInfo\":{\"type\":\"object\",\"properties\":{\"requestAppCode\":{\"type\":\"string\"},\"requestId\":{\"type\":\"string\"}},\"required\":[\"requestAppCode\",\"requestId\"]},\"customerInfo\":{\"type\":\"object\",\"properties\":{\"customerName\":{\"type\":\"string\"},\"customerNumber\":{\"type\":\"string\"},\"customerPhone\":{\"type\":\"string\"},\"customerEmail\":{\"type\":\"string\"}},\"required\":[\"customerName\",\"customerNumber\",\"customerPhone\",\"customerEmail\"]},\"policyInfo\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"polLob\":{\"type\":\"string\"},\"polNum\":{\"type\":\"string\"},\"polMod\":{\"type\":\"string\"},\"polPrem\":{\"type\":\"string\"},\"vehInfo\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"vehYr\":{\"type\":\"string\"},\"vehMk\":{\"type\":\"string\"},\"vehMod\":{\"type\":\"string\"},\"vehComp\":{\"type\":\"string\"},\"vehColl\":{\"type\":\"string\"},\"vehBI\":{\"type\":\"string\"},\"vehPD\":{\"type\":\"string\"}},\"required\":[\"vehYr\",\"vehMk\",\"vehMod\",\"vehComp\",\"vehColl\",\"vehBI\",\"vehPD\"]}}},\"required\":[\"polLob\",\"polNum\",\"polMod\",\"polPrem\",\"vehInfo\"]}}},\"required\":[\"requestStdInfo\",\"customerInfo\",\"policyInfo\"]}},\"required\":[\"CustomerInfoRequest\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "patch",
+            "delete"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": true,
+          "apiFakeMappingFileType": "object",
+          "apiFakerMappingFileLocation": {
+            "type": "object",
+            "properties": {
+              "CustomerInfoRequest": {
+                "type": "object",
+                "properties": {
+                  "requestStdInfo": {
+                    "type": "object",
+                    "properties": {
+                      "requestAppCode": {
+                        "type": "string"
+                      },
+                      "requestId": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "requestAppCode",
+                      "requestId"
+                    ]
+                  },
+                  "customerInfo": {
+                    "type": "object",
+                    "properties": {
+                      "customerName": {
+                        "type": "string"
+                      },
+                      "customerNumber": {
+                        "type": "string"
+                      },
+                      "customerPhone": {
+                        "type": "string"
+                      },
+                      "customerEmail": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "customerName",
+                      "customerNumber",
+                      "customerPhone",
+                      "customerEmail"
+                    ]
+                  },
+                  "policyInfo": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "polLob": {
+                          "type": "string"
+                        },
+                        "polNum": {
+                          "type": "string"
+                        },
+                        "polMod": {
+                          "type": "string"
+                        },
+                        "polPrem": {
+                          "type": "string"
+                        },
+                        "vehInfo": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "vehYr": {
+                                "type": "string"
+                              },
+                              "vehMk": {
+                                "type": "string"
+                              },
+                              "vehMod": {
+                                "type": "string"
+                              },
+                              "vehComp": {
+                                "type": "string"
+                              },
+                              "vehColl": {
+                                "type": "string"
+                              },
+                              "vehBI": {
+                                "type": "string"
+                              },
+                              "vehPD": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "vehYr",
+                              "vehMk",
+                              "vehMod",
+                              "vehComp",
+                              "vehColl",
+                              "vehBI",
+                              "vehPD"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "polLob",
+                        "polNum",
+                        "polMod",
+                        "polPrem",
+                        "vehInfo"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "requestStdInfo",
+                  "customerInfo",
+                  "policyInfo"
+                ]
+              }
+            },
+            "required": [
+              "CustomerInfoRequest"
+            ]
+          },
+          "apiFakerMappingJsonType": "Data Schema",
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null,
+          "fake_data": []
+        },
+        {
+          "resourceName": "ticket",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"customer_num\":{\"type\":\"string\"},\"ticket_details\":{\"type\":\"string\"},\"ticket_num\":{\"type\":\"string\"}},\"required\":[\"customer_num\",\"ticket_details\",\"ticket_num\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "patch",
+            "delete"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": true,
+          "apiFakeMappingFileType": "object",
+          "apiFakerMappingFileLocation": {
+            "type": "object",
+            "properties": {
+              "customer_num": {
+                "type": "string"
+              },
+              "ticket_details": {
+                "type": "string"
+              },
+              "ticket_num": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_num",
+              "ticket_details",
+              "ticket_num"
+            ]
+          },
+          "apiFakerMappingJsonType": "Data Schema",
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null,
+          "fake_data": null
+        }
+      ]
+    },
+    "javaOptions": {
+      "basePackage": "io.cedrus.apigen",
+      "packagingType": "jar",
+      "framework": [
+        "jaxrs",
+        "jaxrs"
+      ],
+      "springBootDeployment": "tomcat"
+    },
+    "apiOverview": {
+      "apiName": "hanover-pl-mvpapi",
+      "apiBasePath": "/api",
+      "apiDescription": "This is sample API being generated by cedrus-api generator"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "customer",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"CustomerInfoRequest\":{\"type\":\"object\",\"properties\":{\"requestStdInfo\":{\"type\":\"object\",\"properties\":{\"requestAppCode\":{\"type\":\"string\"},\"requestId\":{\"type\":\"string\"}},\"required\":[\"requestAppCode\",\"requestId\"]},\"customerInfo\":{\"type\":\"object\",\"properties\":{\"customerName\":{\"type\":\"string\"},\"customerNumber\":{\"type\":\"string\"},\"customerPhone\":{\"type\":\"string\"},\"customerEmail\":{\"type\":\"string\"}},\"required\":[\"customerName\",\"customerNumber\",\"customerPhone\",\"customerEmail\"]},\"policyInfo\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"polLob\":{\"type\":\"string\"},\"polNum\":{\"type\":\"string\"},\"polMod\":{\"type\":\"string\"},\"polPrem\":{\"type\":\"string\"},\"vehInfo\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"vehYr\":{\"type\":\"string\"},\"vehMk\":{\"type\":\"string\"},\"vehMod\":{\"type\":\"string\"},\"vehComp\":{\"type\":\"string\"},\"vehColl\":{\"type\":\"string\"},\"vehBI\":{\"type\":\"string\"},\"vehPD\":{\"type\":\"string\"}},\"required\":[\"vehYr\",\"vehMk\",\"vehMod\",\"vehComp\",\"vehColl\",\"vehBI\",\"vehPD\"]}}},\"required\":[\"polLob\",\"polNum\",\"polMod\",\"polPrem\",\"vehInfo\"]}}},\"required\":[\"requestStdInfo\",\"customerInfo\",\"policyInfo\"]}},\"required\":[\"CustomerInfoRequest\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "patch",
+          "delete"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": true,
+        "apiFakeMappingFileType": "object",
+        "apiFakerMappingFileLocation": {
+          "type": "object",
+          "properties": {
+            "CustomerInfoRequest": {
+              "type": "object",
+              "properties": {
+                "requestStdInfo": {
+                  "type": "object",
+                  "properties": {
+                    "requestAppCode": {
+                      "type": "string"
+                    },
+                    "requestId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "requestAppCode",
+                    "requestId"
+                  ]
+                },
+                "customerInfo": {
+                  "type": "object",
+                  "properties": {
+                    "customerName": {
+                      "type": "string"
+                    },
+                    "customerNumber": {
+                      "type": "string"
+                    },
+                    "customerPhone": {
+                      "type": "string"
+                    },
+                    "customerEmail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "customerName",
+                    "customerNumber",
+                    "customerPhone",
+                    "customerEmail"
+                  ]
+                },
+                "policyInfo": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "polLob": {
+                        "type": "string"
+                      },
+                      "polNum": {
+                        "type": "string"
+                      },
+                      "polMod": {
+                        "type": "string"
+                      },
+                      "polPrem": {
+                        "type": "string"
+                      },
+                      "vehInfo": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "vehYr": {
+                              "type": "string"
+                            },
+                            "vehMk": {
+                              "type": "string"
+                            },
+                            "vehMod": {
+                              "type": "string"
+                            },
+                            "vehComp": {
+                              "type": "string"
+                            },
+                            "vehColl": {
+                              "type": "string"
+                            },
+                            "vehBI": {
+                              "type": "string"
+                            },
+                            "vehPD": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "vehYr",
+                            "vehMk",
+                            "vehMod",
+                            "vehComp",
+                            "vehColl",
+                            "vehBI",
+                            "vehPD"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "polLob",
+                      "polNum",
+                      "polMod",
+                      "polPrem",
+                      "vehInfo"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "requestStdInfo",
+                "customerInfo",
+                "policyInfo"
+              ]
+            }
+          },
+          "required": [
+            "CustomerInfoRequest"
+          ]
+        },
+        "apiFakerMappingJsonType": "Data Schema",
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "fake_data": [],
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "CustomerInfoRequest": {
+              "type": "object",
+              "properties": {
+                "requestStdInfo": {
+                  "type": "object",
+                  "properties": {
+                    "requestAppCode": {
+                      "type": "string"
+                    },
+                    "requestId": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "requestAppCode",
+                    "requestId"
+                  ]
+                },
+                "customerInfo": {
+                  "type": "object",
+                  "properties": {
+                    "customerName": {
+                      "type": "string"
+                    },
+                    "customerNumber": {
+                      "type": "string"
+                    },
+                    "customerPhone": {
+                      "type": "string"
+                    },
+                    "customerEmail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "customerName",
+                    "customerNumber",
+                    "customerPhone",
+                    "customerEmail"
+                  ]
+                },
+                "policyInfo": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "polLob": {
+                        "type": "string"
+                      },
+                      "polNum": {
+                        "type": "string"
+                      },
+                      "polMod": {
+                        "type": "string"
+                      },
+                      "polPrem": {
+                        "type": "string"
+                      },
+                      "vehInfo": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "vehYr": {
+                              "type": "string"
+                            },
+                            "vehMk": {
+                              "type": "string"
+                            },
+                            "vehMod": {
+                              "type": "string"
+                            },
+                            "vehComp": {
+                              "type": "string"
+                            },
+                            "vehColl": {
+                              "type": "string"
+                            },
+                            "vehBI": {
+                              "type": "string"
+                            },
+                            "vehPD": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "vehYr",
+                            "vehMk",
+                            "vehMod",
+                            "vehComp",
+                            "vehColl",
+                            "vehBI",
+                            "vehPD"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "polLob",
+                      "polNum",
+                      "polMod",
+                      "polPrem",
+                      "vehInfo"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "requestStdInfo",
+                "customerInfo",
+                "policyInfo"
+              ]
+            }
+          },
+          "required": [
+            "CustomerInfoRequest"
+          ]
+        }
+      },
+      {
+        "resourceName": "ticket",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"customer_num\":{\"type\":\"string\"},\"ticket_details\":{\"type\":\"string\"},\"ticket_num\":{\"type\":\"string\"}},\"required\":[\"customer_num\",\"ticket_details\",\"ticket_num\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "patch",
+          "delete"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": true,
+        "apiFakeMappingFileType": "object",
+        "apiFakerMappingFileLocation": {
+          "type": "object",
+          "properties": {
+            "customer_num": {
+              "type": "string"
+            },
+            "ticket_details": {
+              "type": "string"
+            },
+            "ticket_num": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "customer_num",
+            "ticket_details",
+            "ticket_num"
+          ]
+        },
+        "apiFakerMappingJsonType": "Data Schema",
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "fake_data": null,
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "customer_num": {
+              "type": "string"
+            },
+            "ticket_details": {
+              "type": "string"
+            },
+            "ticket_num": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "customer_num",
+            "ticket_details",
+            "ticket_num"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"type":"object","properties":{"customer_num":{"type":"string"},"ticket_details":{"type":"string"},"ticket_num":{"type":"string"}},"required":["customer_num","ticket_details","ticket_num"]}
