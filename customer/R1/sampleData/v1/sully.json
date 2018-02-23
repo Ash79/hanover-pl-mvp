@@ -1,0 +1,75 @@
+[
+    {"CustomerInfoRequest": {
+        "requestStdInfo":    {
+           "requestAppCode": "MHP",
+           "requestId": "123456"
+        },
+        "customerInfo":    {
+           "customerName": "Sully",
+           "customerNumber": "1234567890",
+           "customerPhone": "555-555-5555",
+           "customerEmail": "sully@aol.com"
+        },
+     
+        "policyInfo": 
+        [   
+           {
+              "polLob": "Auto",
+              "polNum": "1234567",
+              "polMod": "00",
+              "polPrem": "1200",
+              "vehInfo": 
+              [   
+                 {
+                 "vehYr": "2016",
+                 "vehMk": "Audi",
+                 "vehMod": "A4",
+                 "vehComp": "500",
+                 "vehColl": "500",
+                 "vehBI": "20-40",
+                 "vehPD": "100"
+                 },
+                 {
+                 "vehYr": "2016",
+                 "vehMk": "Audi",
+                 "vehMod": "A8",
+                 "vehComp": "500",
+                 "vehColl": "500",
+                 "vehBI": "20-40",
+                 "vehPD": "100"
+                 }
+              ]
+        
+           },
+           {
+           "polLob": "Auto",
+           "polNum": "1234567",
+           "polMod": "01",
+           "polPrem": "2200",
+              "vehInfo": 
+              [   
+                {
+                 "vehYr": "2016",
+                 "vehMk": "Audi",
+                 "vehMod": "A4",
+                 "vehComp": "500",
+                 "vehColl": "500",
+                 "vehBI": "20-40",
+                 "vehPD": "100"
+                 },
+                 {
+                 "vehYr": "2016",
+                 "vehMk": "Audi",
+                 "vehMod": "A8",
+                 "vehComp": "500",
+                 "vehColl": "500",
+                 "vehBI": "20-40",
+                 "vehPD": "100"
+                 }
+              ]
+           }
+        ]
+     
+     }
+     }
+    ]

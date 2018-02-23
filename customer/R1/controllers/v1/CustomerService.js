@@ -1,7 +1,9 @@
 'use strict';
-  var CustomerFD = require('../../sampleData/v1/Customer.json');
-  var CustomerData = CustomerFD;
+  const sully = require('../../sampleData/v1/sully.json');
+  const dave = require('../../sampleData/v1/dave.json');
+  const brian = require('../../sampleData/v1/brian.json');
 
+var CustomerData;
 
 var Promise = require('bluebird');
 var paginationService = require('../../services/pagination.js');
@@ -13,6 +15,22 @@ exports.getCustomer = function(args, res, next) {
  *
  * returns List
  **/
+  if(args['customerName'].value != null){
+      switch(args['customerName'].value){
+              case 'sully':
+                CustomerData = sully;
+                break;
+              case 'brian':
+                CustomerData = brian;
+                break;
+              case 'dave':
+                CustomerData = dave;
+                break;
+              default:
+                CustomerData = "customer could not be found";
+            }
+  }
+
   if (Object.keys(CustomerData).length > 0) {
             res.setHeader('Content-Type', 'application/json');
                                       console.log('Start Pagination......');

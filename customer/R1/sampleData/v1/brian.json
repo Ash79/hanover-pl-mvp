@@ -1,0 +1,58 @@
+[
+{"CustomerInfoRequest": {
+    "requestStdInfo":    {
+       "requestAppCode": "MHP",
+       "requestId": "123456"
+    },
+    "customerInfo":    {
+       "customerName": "Brian",
+       "customerNumber": "1111111111",
+       "customerPhone": "555-555-5555",
+       "customerEmail": "brian@aol.com"
+    },
+ 
+    "policyInfo": 
+    [   
+       {
+       "polLob": "Auto",
+       "polNum": "1234567",
+       "polMod": "01",
+       "polPrem": "2200",
+          "vehInfo": 
+          [   
+            {
+             "vehYr": "2014",
+             "vehMk": "Audi",
+             "vehMod": "A4",
+             "vehComp": "500",
+             "vehColl": "500",
+             "vehBI": "20-40",
+             "vehPD": "100"
+             }
+          ]
+       },
+ 
+       {
+       "polLob": "Home",
+       "polNum": "1234567",
+       "polMod": "01",
+       "polPrem": "2000",
+          "homeInfo": 
+            {
+             "homeCity": "Shrewsbury",
+             "homeState": "Ma",
+             "homeaddress": "20 Main St",
+             "homeYrBlt": "2008",
+             "homeCovA": "800000",
+             "homeSchedItmCnt": "0",
+             "homeUMBEndo": null,
+             "homeIDThieftEndo" : null
+             }
+ 
+       }
+ 
+    ]
+ 
+ }
+ }
+]

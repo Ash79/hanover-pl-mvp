@@ -9,6 +9,7 @@ var fs = require('fs');
 var spec = fs.readFileSync('./swaggerConfig/input.yaml', 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
+
 // Initialize the Swagger middleware
 swaggerTools.initializeMiddleware(swaggerDoc, function(middleware) {
 
